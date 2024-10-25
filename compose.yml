@@ -21,4 +21,4 @@ services:
     - 53:53/udp
     - 53:53/tcp
     environment:
-      - DNS_A=kikfoppdl.com=216.238.71.197
+      - DNS_A=kikfoppdl.com=10.22.165.29
