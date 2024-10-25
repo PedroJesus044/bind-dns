@@ -1,6 +1,6 @@
 services:
-  rpz:
-    container_name: rpz
+  dns:
+    container_name: dns
     image: cytopia/bind:stable-manifest-linux-amd64
     ports:
     - 53:53/udp
@@ -11,10 +11,3 @@ services:
       DNS_FORWARDER: 8.8.8.8,8.8.4.4
       ALLOW_QUERY: 0.0.0.0/0
       ALLOW_RECURSION: 0.0.0.0/0
-
-
-      # - DNS_A= |*.test.local=10.22.165.29,test.local=10.22.165.29,*.pjedomex.gob.mx=10.22.249.7
-      # # - DNS_PTR=10.22.165.29=test.local
-      # - DNS_FORWARDER=8.8.8.8,8.8.4.4
-      # - ALLOW_QUERY=0.0.0.0/0
-      # - ALLOW_RECURSION=0.0.0.0/0
