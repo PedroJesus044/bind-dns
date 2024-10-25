@@ -1,22 +1,7 @@
 services:
-  # dns:
-  #   container_name: dns
-  #   build:
-  #     context: dns
-  #     dockerfile: Dockerfile
-  #   volumes:
-  #   - ./dns/config.conf:/config.conf
-  #   ports:
-  #   #- 53:53/udp
-  #   - 443:443
-  #   command: ["sleep", "inf"]
-  #   #command: ["executable", "arg"]
-
-  dns:
-    container_name: dns
+  rpz:
+    container_name: rpz
     image: cytopia/bind:stable-manifest-linux-amd64
-    volumes:
-    - ./dns/config.conf:/config.conf
     ports:
     - 53:53/udp
     - 53:53/tcp
@@ -24,3 +9,5 @@ services:
       - DNS_A=*.test.local=10.22.165.29,test.local=10.22.165.29
       - DNS_PTR=10.22.165.29=test.local
       - DNS_FORWARDER=8.8.8.8,8.8.4.4
+      - ALLOW_QUERY=0.0.0.0/0
+      - ALLOW_RECURSION=0.0.0.0/0
