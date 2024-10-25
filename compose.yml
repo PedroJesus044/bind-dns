@@ -7,7 +7,7 @@ services:
     - 53:53/tcp
     environment:
       DNS_A: |
-        test.local=10.22.165.29,apps.ocpprod.pjedomex.gob.mx=10.22.249.7,*.apps.ocpprod.pjedomex.gob.mx=10.22.249.7
+        *.apps.ocpprod.pjedomex.gob.mx=10.22.249.7
       DNS_FORWARDER: 8.8.8.8,8.8.4.4
       ALLOW_QUERY: 0.0.0.0/0
       ALLOW_RECURSION: 0.0.0.0/0
