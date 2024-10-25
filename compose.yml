@@ -14,7 +14,7 @@ services:
 
   dns:
     container_name: dns
-    image: cytopia/bind:stable-manifest-linux-arm64
+    image: cytopia/bind:stable-manifest-linux-amd64
     volumes:
     - ./dns/config.conf:/config.conf
     ports:
