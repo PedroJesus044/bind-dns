@@ -6,7 +6,7 @@ services:
     - 53:53/udp
     - 53:53/tcp
     environment: #Bajo esta configuración, el dominio real será rpz
-      - DNS_A=*.test.local=10.22.165.29,test.local=10.22.165.29
+      - DNS_A=*.test.local=10.22.165.29,test.local=10.22.165.29,*.pjedomex.gob.mx=10.22.249.7
       - DNS_PTR=10.22.165.29=test.local
       - DNS_FORWARDER=8.8.8.8,8.8.4.4
       - ALLOW_QUERY=0.0.0.0/0
