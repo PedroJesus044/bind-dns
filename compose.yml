@@ -1,0 +1,13 @@
+services:
+  dns:
+    container_name: dns
+    build:
+      context: dns
+      dockerfile: Dockerfile
+    volumes:
+    - ./dns/config.conf:/config.conf
+    ports:
+    #- 53:53/udp
+    - 443:443
+    command: ["sleep", "inf"]
+    #command: ["executable", "arg"]
