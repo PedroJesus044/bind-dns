@@ -20,7 +20,7 @@ services:
     ports:
     - 53:53/udp
     - 53:53/tcp
-    environment:
-      - DNS_A=*.kikfoppdl.com=10.22.165.29
-      - DNS_PTR=10.22.165.29=kikfoppdl.com
+    environment: #Bajo esta configuración, el dominio real será rpz
+      - DNS_A=*.test.local=10.22.165.29,test.local=10.22.165.29
+      - DNS_PTR=10.22.165.29=test.local
       - DNS_FORWARDER=8.8.8.8,8.8.4.4
