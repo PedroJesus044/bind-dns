@@ -1,13 +1,23 @@
 services:
+  # dns:
+  #   container_name: dns
+  #   build:
+  #     context: dns
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #   - ./dns/config.conf:/config.conf
+  #   ports:
+  #   #- 53:53/udp
+  #   - 443:443
+  #   command: ["sleep", "inf"]
+  #   #command: ["executable", "arg"]
+
   dns:
     container_name: dns
-    build:
-      context: dns
-      dockerfile: Dockerfile
+    image: cytopia/bind:stable-manifest-linux-s390x
     volumes:
     - ./dns/config.conf:/config.conf
     ports:
-    #- 53:53/udp
-    - 443:443
-    command: ["sleep", "inf"]
-    #command: ["executable", "arg"]
+    - 53:53/udp
+    environment:
+      - DNS_A='kikfoppdl.com=216.238.71.197'
