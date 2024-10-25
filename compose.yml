@@ -22,3 +22,4 @@ services:
     - 53:53/tcp
     environment:
       - DNS_A=kikfoppdl.com=10.22.165.29
+      - DNS_FORWARDER=8.8.8.8,8.8.4.4
